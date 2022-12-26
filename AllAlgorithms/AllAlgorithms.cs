@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -111,17 +111,17 @@ public class AllAlgorithms {
 
      // finds perimeter of a rectangle (only given l and w)
      public static float returnPerimeter (float length, float width) {
-          return length * 2 + width * 2;
+          return length * 2 + width * 2; // perimeter of rect is just all sides added. Since it's only given l and width, we just multiple each of them by 2.
      }
 
      // converts an age to day (ignores leap years)
-     public static int AgeToDays(int years) {
-          return years * 360;
+     public static int AgeToDays(int years) { 
+          return years * 360; // a year is 360 days (ignore leap years) and you multiply that by years to get days
      }
 
      // converts minutes into seconds
      public static float MinToSec(float minutes) {
-          return minutes * 60;
+          return minutes * 60; // to find minutes to second, you simply multiple minutes by 60 because a minute has 60 seconds.
      }
 
      // Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
@@ -137,6 +137,7 @@ public class AllAlgorithms {
      }
 
      // forumla: num1 * 2^num2.
+     // left shift operator is <<
      public static float LeftShiftByPow2(float num1, float num2) {
           return (int)num1 * MathF.Pow(2f, num2);
      }
@@ -147,7 +148,7 @@ public class AllAlgorithms {
           int count = 0; // count to store the index position of ans
 
           for (int x = 1; x<=length; x++) { // goes from 1 - length
-               ans[count] = num * x; // ans[count] = num (number we need to find multiple of) * x (1,2,3,4....)
+               ans[count] = num * x; // ans[count] = num (number we need to find multiple of) * x (factors)
                Console.WriteLine(ans[count]); // prints out answer (if c# accepted return for lists, id not not console.writeline that)
                count++; // increments count
           }
@@ -155,23 +156,24 @@ public class AllAlgorithms {
 
      // function that lower cases the upper case and upper case the lower case :) (useful af)
      public static string ReverseCase(string input) {
-          string ans = "";
-          foreach (char x in input)
+          string ans = ""; // stores empty string var
+          foreach (char x in input) // go through input
           {
-               if (Char.IsLower(x)) {
-                    ans += Char.ToUpper(x);
+               if (Char.IsLower(x)) { // check to see if char is lowercase
+                    ans += Char.ToUpper(x); // we add to the ans variable 'x' and uppercase the lowercase
                } else {
-                    ans += Char.ToLower(x);
+                    ans += Char.ToLower(x); // if it is not uppercase, it lowercases instead
                }
           }
 
-          return ans;
+          return ans; // returns ans
      }
 
      // prints out all the uppercase index positions
+     // (this was initally meant to be a list)
      public static void IndexOfUpperCase(string input) {
-          foreach (char x in input) {
-               if (Char.IsUpper(x)) {
+          foreach (char x in input) { // go through string
+               if (Char.IsUpper(x)) { // if the char is uppercase, we output the index of it
                     Console.WriteLine(input.IndexOf(x));
                }
           }
@@ -179,13 +181,13 @@ public class AllAlgorithms {
 
      // checks to see if the word 'bomb' is in input. (no functions used)
      public static string FindBomb(string input) {
-          string temp = "";
-          bool isBomb = false;
-          foreach (char x in input)
-          {
-               if (x != ' ') {
-                    temp += x;
-               } else {
+          string temp = ""; // stores a temp var (going to be temporary)
+          bool isBomb = false; // stores isBomb var to false
+          foreach (char x in input) // go through input
+          {    
+               if (x != ' ') {  // checks to see if it has no space, if no, we know it is a word or a letter and is not seperated.
+                    temp += x; // stores that word in a var
+               } else { // if there is a space, we check to see if that word is equal to "bomb", if yes it breaks out of loop and sets isBomb to true and if false, it resets the temp variable
                     if (temp == "bomb") {
                          isBomb = true;
                          temp = "";
@@ -196,6 +198,7 @@ public class AllAlgorithms {
                     }    
                }
 
+               // even if there is no space, we still check to see if it is equal to bomb, cause sometimes there might be substrings like, "bomb!" and it detects '!' in the upper part of the code and returns the wrong output
                if (temp == "bomb") {
                     isBomb = true;
                     break;
@@ -204,18 +207,19 @@ public class AllAlgorithms {
                }
           }
 
-          return isBomb ? "Duck!!!" : "There is no bomb, relax.";
-     } // tell if there is another soltuion for this :moyai:
+          return isBomb ? "Duck!!!" : "There is no bomb, relax."; // if isBomb == true (there is a bomb in the word), it returns the output
+     } // tell if there is another soltuion for this :moyai: 
 
+     // checks to see if a pin is valid (only containing digits and if its 4 digit or 6 digit)
      public static bool isPinValid(string PIN) {
-          try {
+          // we need to check for 2 conditions: if its a digit and if its length is 4 or 6
+          try { // tries if it is possible to convert pin to a num, if no, it returns false
                Convert.ToInt32(PIN);
-               return PIN.Length == 4 | PIN.Length == 6 ? true : false;
+               return PIN.Length == 4 | PIN.Length == 6 ? true : false; // then it checks to see if its length is 4 or 6
           } catch {
-               return false;
+               return false; // returns false if its not a digit
           }
      }
-
 
      // idk how to return this or use slicing properly but it returns the middle of a string.
      public static void ReturnMiddleTwoChars(string input) {
@@ -226,11 +230,13 @@ public class AllAlgorithms {
           }
      }
 
-     // scottish screaming challenge :moyai: lmaoo
+     // scottish screaming challenge :moyai: lmaoo but you need to replace every word in this sentence to be "scottish"
+     // so basically replace every word that has a vowel with e
      public static string ScottishScreaming(string input) {
-          input = input.ToLower();
-          for (int x = 0; x<input.Length; x++) {
-               if (input[x] == 'a') {
+          input = input.ToLower(); // lowercase input so that it's more easier to check vowels without worrying about casing
+          for (int x = 0; x<input.Length; x++) { // goes through string
+               // this for loop checkls to see if it is a vowel, if yes, it replaces that vowel with an e.
+               if (input[x] == 'a') { 
                     input = input.Replace('a', 'e');
                } else if (input[x] == 'e') {
                     input = input.Replace('e', 'e');
@@ -243,6 +249,7 @@ public class AllAlgorithms {
                }
           }
 
+          // returns the edited input to upper case cause its supposed to be scream bruh
           return input.ToUpper();
      }
 
@@ -256,7 +263,7 @@ public class AllAlgorithms {
                     high = (int)Char.GetNumericValue(input[x]);
                }
           }
-
+          // IGNORE THIS
           int low = high;
 
           for (int x = 0; x<input.Length; x+=2) {
@@ -270,23 +277,24 @@ public class AllAlgorithms {
 
      // truncate s​​​​​​ such that it contains only the first k​​​​​​ words. (challenge taken from leetcode)
      public string TruncateSentence(string s, int k) {
-        string ans = "";
-        int count = 0;
-        for (int x = 0; x<s.Length; x++) {
-            if (s[x] != ' ') {
-                ans = ans + s[x];
-            } else {
-                count++;
-                if (count == k) {
-                    break;
+        string ans = ""; // stores an empty var called ans (string)
+        int count = 0; // stores an empty var called count (int)
+        for (int x = 0; x<s.Length; x++) { // goes through the string
+            if (s[x] != ' ') { // checks to see if there is an empty string
+                ans = ans + s[x]; // adds s[x] to ans.
+            } else { // if it hits a space, it means that it has gone through one word, so in that case we want to increment the count var
+                count++; 
+                if (count == k) { // we check to see if count == k (which is how much we need to trucate to)
+                    break; // we break the loop once it does
                 }
-                ans = ans + s[x];
+                ans = ans + s[x]; // adds a space to s[x]
             }
         }
 
         return ans;
      }
 
+     // this was all the tests run inside the Main function. (ignore this)
      static void Main(string[] args) {
           // FizzBuzz();
           // Console.WriteLine(ReverseString(Console.ReadLine()));
