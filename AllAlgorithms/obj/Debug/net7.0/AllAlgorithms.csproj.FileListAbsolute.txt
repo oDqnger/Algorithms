@@ -1,0 +1,15 @@
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\AllAlgorithms.csproj.AssemblyReference.cache
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\AllAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\AllAlgorithms.AssemblyInfoInputs.cache
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\AllAlgorithms.AssemblyInfo.cs
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\AllAlgorithms.csproj.CoreCompileInputs.cache
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\bin\Debug\net7.0\AllAlgorithms.exe
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\bin\Debug\net7.0\AllAlgorithms.deps.json
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\bin\Debug\net7.0\AllAlgorithms.runtimeconfig.json
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\bin\Debug\net7.0\AllAlgorithms.dll
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\bin\Debug\net7.0\AllAlgorithms.pdb
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\AllAlgorithms.dll
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\refint\AllAlgorithms.dll
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\AllAlgorithms.pdb
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\AllAlgorithms.genruntimeconfig.cache
+C:\Users\Diman\Desktop\Diman\Programming work\C#\AllAlgorithms\obj\Debug\net7.0\ref\AllAlgorithms.dll
