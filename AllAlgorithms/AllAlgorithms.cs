@@ -222,13 +222,14 @@ public class AllAlgorithms {
      }
 
      // idk how to return this or use slicing properly but it returns the middle of a string.
+     // if even, return middle two otherwise, return the middle one
      public static void ReturnMiddleTwoChars(string input) {
           if (input.Length % 2 != 0) { // checks to see if they are even or not
-               Console.WriteLine(input[input.Length / 2]); // here is the formula
+               Console.WriteLine(input[input.Length / 2]); // it just simply divides the string by two and the index positionf of the the middle of the string shows
           } else {
-               Console.WriteLine($"{input[input.Length / 2 - 1]}{input[(input.Length / 2 - 1) + 1]}"); // same formula but just adding one
+               Console.WriteLine($"{input[input.Length / 2 - 1]}{input[(input.Length / 2 - 1) + 1]}"); // it divides it by 2 and minus by one and joins it by doing the same but adding one at the end
           }
-     }
+     } // hope that makes sense.
 
      // scottish screaming challenge :moyai: lmaoo but you need to replace every word in this sentence to be "scottish"
      // so basically replace every word that has a vowel with e
@@ -276,7 +277,7 @@ public class AllAlgorithms {
      }
 
      // truncate s​​​​​​ such that it contains only the first k​​​​​​ words. (challenge taken from leetcode)
-     public string TruncateSentence(string s, int k) {
+     public static string TruncateSentence(string s, int k) {
         string ans = ""; // stores an empty var called ans (string)
         int count = 0; // stores an empty var called count (int)
         for (int x = 0; x<s.Length; x++) { // goes through the string
@@ -294,6 +295,18 @@ public class AllAlgorithms {
         return ans;
      }
 
+     // converts binary to decimal
+     public static float BinaryToDecimal(long binary) { 
+          string binaryString = binary.ToString(); // converts binary num to string so that we can iterate through it, making operations.
+          int index = 1; // index is one (used for calculating each digit) and is multiplied by 2 everytime we go
+          float ans = 0; // answer var set to 0
+          for (int x = binaryString.Length - 1; x>=0; x--) { // go from the last part of the string to the beginning
+               ans += (float)Char.GetNumericValue(binaryString[x]) * index; // add to the ans var by converting the string digit of the binary number to a digit and multiplying the index
+               index*=2; // multiply it by 2 everytime we go through the binary num
+          }
+
+          return ans; // return ans
+     }
      // this was all the tests run inside the Main function. (ignore this)
      static void Main(string[] args) {
           // FizzBuzz();
@@ -310,5 +323,6 @@ public class AllAlgorithms {
           // ReturnMiddleTwoChars("fresh");
           // Console.WriteLine(ScottishScreaming("Butterflies are beautiful!"));
           // Console.WriteLine(HighLow("1345 1 3 4 6 2 3"));
+          Console.WriteLine(BinaryToDecimal(111));
      }
 }
