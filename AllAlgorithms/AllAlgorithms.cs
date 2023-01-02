@@ -307,6 +307,75 @@ public class AllAlgorithms {
 
           return ans; // return ans
      }
+
+     public static int DecimalToBinary(int decimalNum) {
+          string ans = "";
+
+          while(decimalNum >= 1) {
+               ans = decimalNum % 2 == 0 ? ans+="0" : ans+="1";
+               decimalNum = decimalNum / 2;
+          }
+
+          return Convert.ToInt32(ReverseString(ans));
+     }
+
+     // find the letters that got cencored
+     public static string uncensor(string cencorString, string wordsCencored) {
+          int index = 0;
+          string ans = "";
+          for (int x = 0; x<cencorString.Length; x++) {
+               if (cencorString[x] == '*') {
+                    ans += wordsCencored[index];
+                    index++;
+               } else {
+                    ans += cencorString[x];
+               }
+          }
+
+          return ans;
+     } 
+
+     public static string sevenBoom(int[] nums) {
+          bool isSeven = true;
+          for (int x = 0; x<nums.Length; x++) {
+               string num = nums[x].ToString();
+               for (int y=0; y<num.Length; y++) {
+                    if (num[y] == '7') {
+                         isSeven = false;
+                         break;
+                    }
+               }
+          }
+
+          return !isSeven ? "Boom!" : "there is no 7 in the array";
+     }
+
+     public static string LongestCommonEnding(string stringOne, string stringTwo) {
+          string ans = "";
+          int index = 1;
+          if (stringOne.Length <= stringTwo.Length) {
+               for (int x = stringOne.Length - 1; x>=0; x--) {
+                    if (stringOne[x] == stringTwo[stringTwo.Length - index]) {
+                         ans += stringOne[x];
+                         index++;
+                    } else {
+                         break;
+                    }
+               }
+          } else {
+               for (int x = stringTwo.Length - 1; x>=0; x--) {
+                    if (stringTwo[x] == stringOne[stringOne.Length - index]) {
+                         ans += stringTwo[x];
+                         index++;
+                    } else {
+                         break;
+                    }
+               }
+          }
+
+          return ans == "" ? "No common ending" : ReverseString(ans);
+     }
+
      // this was all the tests run inside the Main function. (ignore this)
      static void Main(string[] args) {
           // FizzBuzz();
@@ -323,6 +392,10 @@ public class AllAlgorithms {
           // ReturnMiddleTwoChars("fresh");
           // Console.WriteLine(ScottishScreaming("Butterflies are beautiful!"));
           // Console.WriteLine(HighLow("1345 1 3 4 6 2 3"));
-          Console.WriteLine(BinaryToDecimal(111));
+          // Console.WriteLine(BinaryToDecimal(111));
+          // Console.WriteLine(DecimalToBinary(100));
+          // Console.WriteLine(uncensor("*l*ph*nt", "Eea"));
+          // Console.WriteLine(sevenBoom(new int[] {2, 55, 60, 97, 86}));
+          // Console.WriteLine(LongestCommonEnding("skyscraper", "carnivore"));
      }
-}
+} // 19 algorithms
